@@ -4,7 +4,7 @@ import { useRouter } from "next/router";
 import React, { useState } from "react";
 import { api } from "../utils/api";
 
-const Home: NextPage = () => {
+const SubmitBuildingPage: NextPage = () => {
   const createBuildingMutation = api.buildings.submitBuildingSpecification.useMutation();
 
   const [energyGrade, setEnergyGrade] = useState('');
@@ -49,4 +49,4 @@ const Home: NextPage = () => {
   );
 };
 
-export default Home;
+export default SubmitBuildingPage;

@@ -3,7 +3,7 @@ import Head from "next/head";
 import Link from "next/link";
 import React from "react";
 
-const Home: NextPage = () => {
+const HomePage: NextPage = () => {
   return (
     <>
       <Head>
@@ -20,7 +20,7 @@ const Home: NextPage = () => {
   );
 };
 
-export default Home;
+export default HomePage;
 
 // const AuthShowcase: React.FC = () => {
 //   const { data: sessionData } = useSession();
