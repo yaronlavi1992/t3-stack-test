@@ -67,6 +67,6 @@ model VerificationToken {
 
 model BuildingSpecification {
     id        String   @id @default(cuid())
+    energyGrade String
     description String
-    author String
 }
