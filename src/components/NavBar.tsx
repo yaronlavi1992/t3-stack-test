@@ -7,7 +7,7 @@ export const NavBar = () => {
     <nav className="bg-white border-gray-200 px-2 sm:px-4 py-2.5 dark:bg-gray-900">
       <div className="container flex flex-wrap items-center justify-between mx-auto">
         <Link href='/' className="flex items-center gap-2">
-          <Image style={{borderRadius:'50%'}} width={24} height={24} src={'/HeaderLogo.png'} alt='header logo' />
+          <Image style={{ borderRadius: '50%' }} width={24} height={24} src={'/HeaderLogo.png'} alt='header logo' />
           <span className="self-center text-xl font-semibold whitespace-nowrap dark:text-white">
             Buildings Energy Grade Manager
           </span>
