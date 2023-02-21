@@ -12,7 +12,7 @@ export const buildingsRouter = createTRPCRouter({
           ...input,
         }
       });
-      return building ? true : false;
+      return building;
     }),
 
   getBuildings: publicProcedure.query(async ({ ctx }) => {
