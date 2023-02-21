@@ -11,7 +11,7 @@ const SubmitBuildingPage: NextPage = () => {
   const [description, setDescription] = useState('');
   const router = useRouter();
 
-  const handleSubmitBuildingSpecification = async (e: React.FormEvent) => {
+  const handleSubmitBuildingSpecification = (e: React.FormEvent) => {
     e.preventDefault();
     createBuildingMutation.mutateAsync({
       energyGrade,
