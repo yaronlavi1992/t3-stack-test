@@ -13,15 +13,11 @@ const SubmitBuildingPage: NextPage = () => {
 
   const handleSubmitBuildingSpecification = async (e: React.FormEvent) => {
     e.preventDefault();
-    try {
-      await createBuildingMutation.mutateAsync({
-        energyGrade,
-        description
-      });
-      router.push('/buildings')
-    } catch (error) {
-      console.log(error);
-    }
+    void await createBuildingMutation.mutateAsync({
+      energyGrade,
+      description
+    });
+    router.push('/buildings')
   }
 
   return (
