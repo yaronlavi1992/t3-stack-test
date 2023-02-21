@@ -11,14 +11,15 @@ const SubmitBuildingPage: NextPage = () => {
   const [description, setDescription] = useState('');
   const router = useRouter();
 
-  const handleSubmitBuildingSpecification = (e: React.FormEvent) => {
+  const handleSubmitBuildingSpecification = async (e: React.FormEvent) => {
     e.preventDefault();
-    createBuildingMutation.mutateAsync({
+    const success = await createBuildingMutation.mutateAsync({
       energyGrade,
       description
-    })
-    .catch(err => console.log(err))
-    .then(() => router.push('/buildings'));
+    });
+    if (success) {
+      router.push('/buildings')
+    }
   }
 
   return (
@@ -32,7 +33,7 @@ const SubmitBuildingPage: NextPage = () => {
         <h1>Submit an Energy Grade</h1>
         <form onSubmit={handleSubmitBuildingSpecification} className='flex flex-col gap-4 items-center justify-center text-white'>
           <label htmlFor='energy-grades-select'>Energy grades</label>
-          <select value={energyGrade} onChange={(e) => {setEnergyGrade(e.target.value)}} id='energy-grades-select' className="text-black" required>
+          <select value={energyGrade} onChange={(e) => { setEnergyGrade(e.target.value) }} id='energy-grades-select' className="text-black" required>
             <option value={undefined} hidden></option>
 
             <option value="grade-a">Grade A</option>

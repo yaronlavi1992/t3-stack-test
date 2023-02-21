@@ -7,11 +7,12 @@ export const buildingsRouter = createTRPCRouter({
     .input(z.object({ energyGrade: z.string(), description: z.string() }))
     .mutation(async ({ input, ctx }) => {
       // TODO: save to the database
-      await ctx.prisma.buildingSpecification.create({
+      const building = await ctx.prisma.buildingSpecification.create({
         data: {
           ...input,
         }
       });
+      return building ? true : false;
     }),
 
   getBuildings: publicProcedure.query(async ({ ctx }) => {
