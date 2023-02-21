@@ -12,7 +12,7 @@ const HomePage: NextPage = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main className="flex min-h-screen flex-col items-center justify-center gap-8 bg-gradient-to-b from-[#2e026d] to-[#15162c] text-white">
-        <h1>Welcome to buildings energy grade manager</h1>
+        <h1>Welcome to Buildings Energy Grade Manager</h1>
         <Link href='/submit-building'>Submit a new building</Link>
         <Link href='/buildings'>View buildings</Link>
       </main>
