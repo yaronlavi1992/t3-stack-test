@@ -13,6 +13,7 @@ const SubmitBuildingPage: NextPage = () => {
 
   async function handleSubmitBuildingSpecification(e: React.FormEvent) {
     e.preventDefault();
+    // eslint-disable-next-line promise/catch-or-return
     await createBuildingMutation.mutateAsync({
       energyGrade,
       description
