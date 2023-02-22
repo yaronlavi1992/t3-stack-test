@@ -1,17 +1,16 @@
-import { type NextPage } from "next";
 import Head from "next/head";
 import { useRouter } from "next/router";
 import React, { useState } from "react";
 import { api } from "../utils/api";
 
-const SubmitBuildingPage: NextPage = () => {
+const SubmitBuildingPage = () => {
   const createBuildingMutation = api.buildings.submitBuildingSpecification.useMutation();
 
   const [energyGrade, setEnergyGrade] = useState('');
   const [description, setDescription] = useState('');
   const router = useRouter();
 
-  const handleSubmitBuildingSpecification = async (e: React.FormEvent): Promise<void> => {
+  const handleSubmitBuildingSpecification = async (e) => {
     e.preventDefault()
     try {
       await createBuildingMutation.mutateAsync({ energyGrade, description })
